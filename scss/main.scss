@@ -1,0 +1,25 @@
+/* -------------------------------------------------------------------------- */
+/*                                 @font-face                                 */
+/* -------------------------------------------------------------------------- */
+@font-face {
+    font-family: "themeRegular";
+    src: url(../fonts/BaiJamjuree-Regular.woff),
+        url(../fonts/BaiJamjuree-Regular.woff2);
+        font-weight: normal;
+}
+
+@font-face {
+    font-family: "themeSemiBold";
+    src: url(../fonts/BaiJamjuree-SemiBold.woff),
+        url(../fonts/BaiJamjuree-SemiBold.woff2);
+        font-weight: normal;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Variables                                 */
+/* -------------------------------------------------------------------------- */
+$primary: hsl(171, 66%, 44%);
+$secondary: hsl(233, 100%, 69%);
+
+$dark-grayish-blue: hsl(210, 10%, 33%);
+$grayish-blue: hsl(201, 11%, 66%);
