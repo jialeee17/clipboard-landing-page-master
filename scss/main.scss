@@ -1,18 +1,20 @@
 /* -------------------------------------------------------------------------- */
+/*                                   @import                                  */
+/* -------------------------------------------------------------------------- */
+@import "base/reset";
+
+/* -------------------------------------------------------------------------- */
 /*                                 @font-face                                 */
 /* -------------------------------------------------------------------------- */
 @font-face {
     font-family: "themeRegular";
-    src: url(../fonts/BaiJamjuree-Regular.woff),
-        url(../fonts/BaiJamjuree-Regular.woff2);
-        font-weight: normal;
+    src: url(../fonts/BaiJamjuree-Regular.woff) format("woff"), url(../fonts/BaiJamjuree-Regular.woff2) format("woff2");
 }
 
 @font-face {
     font-family: "themeSemiBold";
-    src: url(../fonts/BaiJamjuree-SemiBold.woff),
-        url(../fonts/BaiJamjuree-SemiBold.woff2);
-        font-weight: normal;
+    src: url(../fonts/BaiJamjuree-SemiBold.woff) format("woff"),
+        url(../fonts/BaiJamjuree-SemiBold.woff2) format("woff2");
 }
 
 /* -------------------------------------------------------------------------- */
@@ -21,5 +23,346 @@
 $primary: hsl(171, 66%, 44%);
 $secondary: hsl(233, 100%, 69%);
 
+$white: #fff;
 $dark-grayish-blue: hsl(210, 10%, 33%);
 $grayish-blue: hsl(201, 11%, 66%);
+
+/* -------------------------------------------------------------------------- */
+/*                                     CSS                                    */
+/* -------------------------------------------------------------------------- */
+:root {
+    font-size: 10px;
+
+    body {
+        font-family: "themeRegular";
+        font-size: 1.5rem;
+        width: 100%;
+        min-height: 100vh;
+        text-align: center;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span,
+        a {
+            line-height: 1.2em;
+            letter-spacing: 0.03rem;
+            cursor: default;
+        }
+    }
+}
+
+.container {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+/* -------------------------------- Sections -------------------------------- */
+.section {
+    .sectionWrap {
+        .section__intro {
+            h1 {
+                color: $dark-grayish-blue;
+                font-family: "themeBold";
+                font-size: 3rem;
+                font-weight: bold;
+                text-shadow: 0 0 0.1rem $dark-grayish-blue;
+            }
+
+            h2 {
+                color: $dark-grayish-blue;
+                font-family: "themeBold";
+                font-size: 2.8rem;
+                font-weight: bold;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                color: $grayish-blue;
+                font-family: "themeRegular";
+            }
+        }
+    }
+
+    /* ------------------------------ Section Main ------------------------------ */
+    &.section-main {
+        background: url("../images/bg-header-mobile.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .sectionWrap {
+            padding: 9.5rem 0.5rem 8rem;
+
+            .imgWrapper {
+                &.logo {
+                    margin-bottom: 5.5rem;
+
+                    img {
+                        width: 10rem;
+                        height: 10rem;
+                    }
+                }
+            }
+
+            .section__intro {
+                h1 {
+                    margin-bottom: 1.8rem;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                    line-height: 1.5em;
+                    margin-bottom: 4rem;
+                }
+            }
+
+            .iosMac-download-wrapper {
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    button {
+                        border-radius: 2.5rem;
+                        color: $white;
+                        font-size: 1.5rem;
+                        padding: 1.5rem;
+                        text-shadow: 0 0 0.2rem #f5f5f5;
+
+                        &:not(:last-child) {
+                            margin-bottom: 2rem;
+                        }
+
+                        &.btn-ios-download {
+                            background: $primary;
+                            box-shadow: 0 0.2rem 0rem hsl(171, 68%, 25%), 0 0.2rem 0.5rem hsl(171, 68%, 25%);
+                        }
+                        &.btn-mac-download {
+                            background: $secondary;
+                            box-shadow: 0 0.2rem 0rem hsl(171, 68%, 25%), 0 0.2rem 0.5rem hsl(233, 46%, 36%);
+                        }
+                    }
+                }
+            }
+        }
+    } // End .section-main
+
+    /* ---------------------------- Section Features ---------------------------- */
+    &.section-features {
+        .sectionWrap {
+            padding: 5rem 0.5rem;
+
+            &:not(:last-child) {
+                margin-bottom: 5rem;
+            }
+
+            &:nth-child(2) {
+                margin-bottom: 0;
+            }
+
+            &:last-child {
+                .section__intro {
+                    p {
+                        margin-bottom: 7rem;
+                    }
+                }
+
+                .section__contents {
+                    .features {
+                        .feature {
+                            > .imgWrapper {
+                                width: 4rem;
+                                height: 4rem;
+                                margin-bottom: 3.5rem;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+
+                            &:not(:last-child) {
+                                p {
+                                    margin-bottom: 5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .section__intro {
+                h2 {
+                    width: 85%;
+                    margin: 0 auto 1.8rem;
+                }
+
+                p {
+                    margin-bottom: 5rem;
+                }
+            }
+
+            .section__contents {
+                .imgWrapper {
+                    margin: 0 auto 5rem;
+                    width: 80%;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .features {
+                    .feature {
+                        &:not(:last-child) {
+                            p {
+                                margin-bottom: 4.5rem;
+                            }
+                        }
+
+                        h3 {
+                            color: $dark-grayish-blue;
+                            font-family: "themeBold";
+                            font-size: 2rem;
+                            font-weight: bold;
+                            margin-bottom: 1.5rem;
+                        }
+
+                        p {
+                            color: $grayish-blue;
+                            font-size: 1.5rem;
+                            line-height: 1.4em;
+                        }
+                    }
+                }
+            }
+        }
+    } // End .section-features
+
+    /* -------------------------- Section Partnerships -------------------------- */
+    &.section-partnerships {
+        margin-bottom: 3rem;
+
+        .sectionWrap {
+            padding: 5rem 0.5rem;
+
+            .partnership-iso {
+                &:not(:last-child) {
+                    margin-bottom: 5rem;
+                }
+
+                .imgWrapper {
+                    width: 12rem;
+                    margin: 0 auto;
+
+                    a {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    } // End .section-partnerships
+
+    &.section-download {
+        .sectionWrap {
+            padding: 5rem 0.5rem 13.5rem;
+
+            .section__intro {
+                h2 {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 1.8rem;
+                    width: 85%;
+                }
+
+                p {
+                    margin-bottom: 3.5rem;
+                }
+            }
+
+            .iosMac-download-wrapper {
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    button {
+                        border-radius: 2.5rem;
+                        color: $white;
+                        font-size: 1.4rem;
+                        padding: 1.5rem;
+                        text-shadow: 0 0 0.2rem #f5f5f5;
+
+                        &:not(:last-child) {
+                            margin-bottom: 2rem;
+                        }
+
+                        &.btn-ios-download {
+                            background: $primary;
+                            box-shadow: 0 0.2rem 0rem hsl(171, 68%, 25%), 0 0.2rem 0.5rem hsl(171, 68%, 25%);
+                        }
+                        &.btn-mac-download {
+                            background: $secondary;
+                            box-shadow: 0 0.2rem 0rem hsl(171, 68%, 25%), 0 0.2rem 0.5rem hsl(233, 46%, 36%);
+                        }
+                    }
+                }
+            }
+        }
+    } // .section-download
+}
+
+/* --------------------------------- Footer --------------------------------- */
+.footer {
+    background: #f5f6f8;
+
+    .footerWrap {
+        padding: 4rem;
+
+        .imgWrapper {
+            width: 4.5rem;
+            height: 4.5rem;
+            margin: 0 auto 3.5rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .footerNav {
+            .footerNav-nav {
+                margin-bottom: 4rem;
+
+                .nav-item {
+                    &:not(:last-child) {
+                        margin-bottom: 2.5rem;
+                    }
+
+                    .nav-link {
+                        color: #333;
+                    }
+                }
+            }
+        }
+
+        .socialMedia {
+            .socialMedia-links {
+                display: flex;
+                justify-content: center;
+
+                .socialMedia-link {
+                    &:not(:last-child) {
+                        margin-right: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}

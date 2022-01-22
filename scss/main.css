@@ -1,19 +1,391 @@
 /* -------------------------------------------------------------------------- */
+/*                                   @import                                  */
+/* -------------------------------------------------------------------------- */
+/*** The new CSS Reset - version 1.4.5 (last updated 13.1.2022) ***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                 @font-face                                 */
 /* -------------------------------------------------------------------------- */
 @font-face {
   font-family: "themeRegular";
-  src: url(../fonts/BaiJamjuree-Regular.woff), url(../fonts/BaiJamjuree-Regular.woff2);
-  font-weight: normal;
+  src: url(../fonts/BaiJamjuree-Regular.woff) format("woff"), url(../fonts/BaiJamjuree-Regular.woff2) format("woff2");
 }
 
 @font-face {
   font-family: "themeSemiBold";
-  src: url(../fonts/BaiJamjuree-SemiBold.woff), url(../fonts/BaiJamjuree-SemiBold.woff2);
-  font-weight: normal;
+  src: url(../fonts/BaiJamjuree-SemiBold.woff) format("woff"), url(../fonts/BaiJamjuree-SemiBold.woff2) format("woff2");
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                  Variables                                 */
 /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                     CSS                                    */
+/* -------------------------------------------------------------------------- */
+:root {
+  font-size: 10px;
+}
+
+:root body {
+  font-family: "themeRegular";
+  font-size: 1.5rem;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+:root body h1,
+:root body h2,
+:root body h3,
+:root body h4,
+:root body h5,
+:root body h6,
+:root body p,
+:root body span,
+:root body a {
+  line-height: 1.2em;
+  letter-spacing: 0.03rem;
+  cursor: default;
+}
+
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+/* -------------------------------- Sections -------------------------------- */
+.section {
+  /* ------------------------------ Section Main ------------------------------ */
+  /* ---------------------------- Section Features ---------------------------- */
+  /* -------------------------- Section Partnerships -------------------------- */
+}
+
+.section .sectionWrap .section__intro h1 {
+  color: #4c545d;
+  font-family: "themeBold";
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 0 0.1rem #4c545d;
+}
+
+.section .sectionWrap .section__intro h2 {
+  color: #4c545d;
+  font-family: "themeBold";
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.section .sectionWrap .section__intro p {
+  color: #9fabb2;
+  font-family: "themeRegular";
+}
+
+.section.section-main {
+  background: url("../images/bg-header-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section.section-main .sectionWrap {
+  padding: 9.5rem 0.5rem 8rem;
+}
+
+.section.section-main .sectionWrap .imgWrapper.logo {
+  margin-bottom: 5.5rem;
+}
+
+.section.section-main .sectionWrap .imgWrapper.logo img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.section.section-main .sectionWrap .section__intro h1 {
+  margin-bottom: 1.8rem;
+}
+
+.section.section-main .sectionWrap .section__intro p {
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  margin-bottom: 4rem;
+}
+
+.section.section-main .sectionWrap .iosMac-download-wrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section.section-main .sectionWrap .iosMac-download-wrapper div button {
+  border-radius: 2.5rem;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  text-shadow: 0 0 0.2rem #f5f5f5;
+}
+
+.section.section-main .sectionWrap .iosMac-download-wrapper div button:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.section.section-main .sectionWrap .iosMac-download-wrapper div button.btn-ios-download {
+  background: #26baa4;
+  -webkit-box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #146b5e;
+          box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #146b5e;
+}
+
+.section.section-main .sectionWrap .iosMac-download-wrapper div button.btn-mac-download {
+  background: #6173ff;
+  -webkit-box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #323b86;
+          box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #323b86;
+}
+
+.section.section-features .sectionWrap {
+  padding: 5rem 0.5rem;
+}
+
+.section.section-features .sectionWrap:not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+.section.section-features .sectionWrap:nth-child(2) {
+  margin-bottom: 0;
+}
+
+.section.section-features .sectionWrap:last-child .section__intro p {
+  margin-bottom: 7rem;
+}
+
+.section.section-features .sectionWrap:last-child .section__contents .features .feature > .imgWrapper {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 3.5rem;
+}
+
+.section.section-features .sectionWrap:last-child .section__contents .features .feature > .imgWrapper img {
+  width: 100%;
+}
+
+.section.section-features .sectionWrap:last-child .section__contents .features .feature:not(:last-child) p {
+  margin-bottom: 5rem;
+}
+
+.section.section-features .sectionWrap .section__intro h2 {
+  width: 85%;
+  margin: 0 auto 1.8rem;
+}
+
+.section.section-features .sectionWrap .section__intro p {
+  margin-bottom: 5rem;
+}
+
+.section.section-features .sectionWrap .section__contents .imgWrapper {
+  margin: 0 auto 5rem;
+  width: 80%;
+}
+
+.section.section-features .sectionWrap .section__contents .imgWrapper:last-child {
+  margin-bottom: 0;
+}
+
+.section.section-features .sectionWrap .section__contents .imgWrapper img {
+  width: 100%;
+}
+
+.section.section-features .sectionWrap .section__contents .features .feature:not(:last-child) p {
+  margin-bottom: 4.5rem;
+}
+
+.section.section-features .sectionWrap .section__contents .features .feature h3 {
+  color: #4c545d;
+  font-family: "themeBold";
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.section.section-features .sectionWrap .section__contents .features .feature p {
+  color: #9fabb2;
+  font-size: 1.5rem;
+  line-height: 1.4em;
+}
+
+.section.section-partnerships {
+  margin-bottom: 3rem;
+}
+
+.section.section-partnerships .sectionWrap {
+  padding: 5rem 0.5rem;
+}
+
+.section.section-partnerships .sectionWrap .partnership-iso:not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+.section.section-partnerships .sectionWrap .partnership-iso .imgWrapper {
+  width: 12rem;
+  margin: 0 auto;
+}
+
+.section.section-partnerships .sectionWrap .partnership-iso .imgWrapper a img {
+  width: 100%;
+}
+
+.section.section-download .sectionWrap {
+  padding: 5rem 0.5rem 13.5rem;
+}
+
+.section.section-download .sectionWrap .section__intro h2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.8rem;
+  width: 85%;
+}
+
+.section.section-download .sectionWrap .section__intro p {
+  margin-bottom: 3.5rem;
+}
+
+.section.section-download .sectionWrap .iosMac-download-wrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section.section-download .sectionWrap .iosMac-download-wrapper div button {
+  border-radius: 2.5rem;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 1.5rem;
+  text-shadow: 0 0 0.2rem #f5f5f5;
+}
+
+.section.section-download .sectionWrap .iosMac-download-wrapper div button:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.section.section-download .sectionWrap .iosMac-download-wrapper div button.btn-ios-download {
+  background: #26baa4;
+  -webkit-box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #146b5e;
+          box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #146b5e;
+}
+
+.section.section-download .sectionWrap .iosMac-download-wrapper div button.btn-mac-download {
+  background: #6173ff;
+  -webkit-box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #323b86;
+          box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #323b86;
+}
+
+/* --------------------------------- Footer --------------------------------- */
+.footer {
+  background: #f5f6f8;
+}
+
+.footer .footerWrap {
+  padding: 4rem;
+}
+
+.footer .footerWrap .imgWrapper {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0 auto 3.5rem;
+}
+
+.footer .footerWrap .imgWrapper img {
+  width: 100%;
+}
+
+.footer .footerWrap .footerNav .footerNav-nav {
+  margin-bottom: 4rem;
+}
+
+.footer .footerWrap .footerNav .footerNav-nav .nav-item:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.footer .footerWrap .footerNav .footerNav-nav .nav-item .nav-link {
+  color: #333;
+}
+
+.footer .footerWrap .socialMedia .socialMedia-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer .footerWrap .socialMedia .socialMedia-links .socialMedia-link:not(:last-child) {
+  margin-right: 3rem;
+}
 /*# sourceMappingURL=main.css.map */
