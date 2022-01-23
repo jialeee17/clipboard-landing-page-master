@@ -114,19 +114,18 @@ textarea {
   margin: 0 auto;
 }
 
-/* -------------------------------- Sections -------------------------------- */
-.section {
-  /* ------------------------------ Section Main ------------------------------ */
-  /* ---------------------------- Section Features ---------------------------- */
-  /* -------------------------- Section Partnerships -------------------------- */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 65%;
+  }
 }
 
+/* -------------------------------- Sections -------------------------------- */
 .section .sectionWrap .section__intro h1 {
   color: #4c545d;
   font-family: "themeBold";
   font-size: 3rem;
   font-weight: bold;
-  text-shadow: 0 0 0.1rem #4c545d;
 }
 
 .section .sectionWrap .section__intro h2 {
@@ -138,8 +137,30 @@ textarea {
 }
 
 .section .sectionWrap .section__intro p {
+  font-size: 1.5rem;
+  line-height: 1.5em;
   color: #9fabb2;
   font-family: "themeRegular";
+}
+
+@media screen and (min-width: 1440px) {
+  .section .sectionWrap .section__intro h1 {
+    font-size: 5.5rem;
+    letter-spacing: 0.12rem;
+    margin-bottom: 2.5rem;
+  }
+  .section .sectionWrap .section__intro h2 {
+    font-size: 4rem;
+  }
+  .section .sectionWrap .section__intro p {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .section .sectionWrap .section__intro {
+    padding: 0 10rem;
+  }
 }
 
 .section.section-main {
@@ -148,17 +169,26 @@ textarea {
   background-size: cover;
 }
 
+@media screen and (min-width: 1440px) {
+  .section.section-main {
+    background: url("../images/bg-header-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
 .section.section-main .sectionWrap {
   padding: 9.5rem 0.5rem 8rem;
 }
 
 .section.section-main .sectionWrap .imgWrapper.logo {
-  margin-bottom: 5.5rem;
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto 5.5rem;
 }
 
 .section.section-main .sectionWrap .imgWrapper.logo img {
-  width: 10rem;
-  height: 10rem;
+  width: 100%;
 }
 
 .section.section-main .sectionWrap .section__intro h1 {
@@ -166,8 +196,6 @@ textarea {
 }
 
 .section.section-main .sectionWrap .section__intro p {
-  font-size: 1.5rem;
-  line-height: 1.5em;
   margin-bottom: 4rem;
 }
 
@@ -203,6 +231,39 @@ textarea {
   background: #6173ff;
   -webkit-box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #323b86;
           box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #323b86;
+}
+
+@media screen and (min-width: 1440px) {
+  .section.section-main .sectionWrap {
+    padding: 13rem 0.5rem 10rem;
+  }
+  .section.section-main .sectionWrap .imgWrapper.logo {
+    width: 13rem;
+    height: 13rem;
+  }
+  .section.section-main .sectionWrap .section__intro h1 {
+    margin-bottom: 2.5rem;
+  }
+  .section.section-main .sectionWrap .section__intro p {
+    margin-bottom: 5rem;
+  }
+  .section.section-main .sectionWrap .iosMac-download-wrapper div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 3rem;
+  }
+  .section.section-main .sectionWrap .iosMac-download-wrapper div button {
+    border-radius: 3rem;
+    padding: 2rem 3.5rem;
+  }
+  .section.section-main .sectionWrap .iosMac-download-wrapper div button:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 .section.section-features .sectionWrap {
@@ -257,6 +318,13 @@ textarea {
   width: 100%;
 }
 
+.section.section-features .sectionWrap .section__contents .imgWrapper img.mobile-hide {
+  display: none;
+  position: absolute;
+  left: -3rem;
+  width: 52%;
+}
+
 .section.section-features .sectionWrap .section__contents .features .feature:not(:last-child) p {
   margin-bottom: 4.5rem;
 }
@@ -275,6 +343,65 @@ textarea {
   line-height: 1.4em;
 }
 
+@media screen and (min-width: 1440px) {
+  .section.section-features .sectionWrap .section__intro h2 {
+    margin: 0 auto 2.5rem;
+  }
+  .section.section-features .sectionWrap .section__intro p {
+    margin-bottom: 8rem;
+  }
+  .section.section-features .sectionWrap .section__contents {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section.section-features .sectionWrap .section__contents .imgWrapper.computer img.desktop-hide {
+    display: none;
+  }
+  .section.section-features .sectionWrap .section__contents .imgWrapper.computer img.mobile-hide {
+    display: block;
+  }
+  .section.section-features .sectionWrap .section__contents .features {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .section.section-features .sectionWrap .section__contents .features.align-left {
+    text-align: initial;
+  }
+  .section.section-features .sectionWrap .section__contents .features .feature h3 {
+    font-size: 2.5rem;
+  }
+  .section.section-features .sectionWrap .section__contents .features .feature p {
+    font-size: 1.6rem;
+  }
+  .section.section-features .sectionWrap:first-child .section__contents {
+    min-height: 75rem;
+  }
+  .section.section-features .sectionWrap:last-child .section__contents .features {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 3rem;
+  }
+  .section.section-features .sectionWrap:last-child .section__contents .features .feature {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% / 3);
+            flex: 0 0 calc(100% / 3);
+  }
+}
+
 .section.section-partnerships {
   margin-bottom: 3rem;
 }
@@ -283,17 +410,31 @@ textarea {
   padding: 5rem 0.5rem;
 }
 
-.section.section-partnerships .sectionWrap .partnership-iso:not(:last-child) {
+.section.section-partnerships .sectionWrap .partnershipWrapper .partnership-iso:not(:last-child) {
   margin-bottom: 5rem;
 }
 
-.section.section-partnerships .sectionWrap .partnership-iso .imgWrapper {
+.section.section-partnerships .sectionWrap .partnershipWrapper .partnership-iso .imgWrapper {
   width: 12rem;
   margin: 0 auto;
 }
 
-.section.section-partnerships .sectionWrap .partnership-iso .imgWrapper a img {
+.section.section-partnerships .sectionWrap .partnershipWrapper .partnership-iso .imgWrapper a img {
   width: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+  .section.section-partnerships .sectionWrap .partnershipWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .section.section-partnerships .sectionWrap .partnershipWrapper .partnership-iso .imgWrapper {
+    width: 16rem;
+  }
 }
 
 .section.section-download .sectionWrap {
@@ -345,6 +486,35 @@ textarea {
           box-shadow: 0 0.2rem 0rem #146b5e, 0 0.2rem 0.5rem #323b86;
 }
 
+@media screen and (min-width: 1440px) {
+  .section.section-download .sectionWrap {
+    padding: 5rem 0.5rem 15rem;
+  }
+  .section.section-download .sectionWrap .section__intro h2 {
+    margin-bottom: 2.5rem;
+  }
+  .section.section-download .sectionWrap .section__intro p {
+    margin-bottom: 5rem;
+  }
+  .section.section-download .sectionWrap .iosMac-download-wrapper div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 3rem;
+  }
+  .section.section-download .sectionWrap .iosMac-download-wrapper div button {
+    border-radius: 3rem;
+    padding: 2rem 3.5rem;
+  }
+  .section.section-download .sectionWrap .iosMac-download-wrapper div button:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
 /* --------------------------------- Footer --------------------------------- */
 .footer {
   background: #f5f6f8;
@@ -387,5 +557,38 @@ textarea {
 
 .footer .footerWrap .socialMedia .socialMedia-links .socialMedia-link:not(:last-child) {
   margin-right: 3rem;
+}
+
+@media screen and (min-width: 1440px) {
+  .footer .footerWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 4rem 15rem;
+  }
+  .footer .footerWrap .imgWrapper {
+    margin: initial;
+    width: 6rem;
+    height: 6rem;
+  }
+  .footer .footerWrap .footerNav .footerNav-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 0;
+  }
+  .footer .footerWrap .footerNav .footerNav-nav .nav-item:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 3rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
