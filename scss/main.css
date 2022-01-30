@@ -242,7 +242,10 @@ textarea {
     height: 13rem;
   }
   .section.section-main .sectionWrap .section__intro h1 {
+    -webkit-animation: flicker 1.2s infinite alternate;
+            animation: flicker 1.2s infinite alternate;
     margin-bottom: 2.5rem;
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 30px #0fa, 0 0 37px #0fa, 0 0 80px #0fa;
   }
   .section.section-main .sectionWrap .section__intro p {
     margin-bottom: 5rem;
@@ -589,6 +592,47 @@ textarea {
   .footer .footerWrap .footerNav .footerNav-nav .nav-item:not(:last-child) {
     margin-bottom: 0;
     margin-right: 3rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Animations                                 */
+/* -------------------------------------------------------------------------- */
+@-webkit-keyframes flicker {
+  0%,
+  18%,
+  22%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 30px #0fa, 0 0 37px #0fa, 0 0 80px #0fa;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 30px #0fa, 0 0 37px #0fa, 0 0 80px #0fa;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion) {
+  h1 {
+    -webkit-animation: none;
+            animation: none;
   }
 }
 /*# sourceMappingURL=main.css.map */
