@@ -18,7 +18,6 @@ This is a solution to the [Clipboard landing page challenge on Frontend Mentor](
 ### Screenshot
 
 ![Desktop Layout](./images/screenshot/desktop-layout.png)
-![mobile Layout](./images/screenshot/mobile-layout.png)
 
 ### Links
 
