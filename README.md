@@ -22,7 +22,7 @@ This is a solution to the [Clipboard landing page challenge on Frontend Mentor](
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/solutions/clipboardlandingpage-Q2Rnqp6VU]
-- Live Site URL: [https://jiale456.github.io/clipboard-landing-page-master/]
+- Live Site URL: [https://jialeee17.github.io/clipboard-landing-page-master/]
 
 ## My process
 
